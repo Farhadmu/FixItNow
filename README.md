@@ -2,6 +2,14 @@
 
 Assignment 4 (Programming Hero) — Backend-only REST API built with **Node.js, Express, TypeScript, PostgreSQL, Prisma, JWT and Stripe**.
 
+## Highlights
+
+- Role-based authentication for customers, technicians, and admins
+- Service, booking, payment, and review flows for a home-service marketplace
+- Prisma schema with PostgreSQL and seeded default data
+- Stripe checkout integration with webhook confirmation support
+- Ready-to-import Postman collection for API testing
+
 ---
 
 ## 1. Tech Stack
@@ -138,44 +146,11 @@ Use a hosted Postgres (Neon / Supabase / Railway) — free tier is enough. Copy 
 4. Deploy. Render gives you a live URL like `https://fixitnow-backend.onrender.com`.
 5. Run the seed once (Render Shell tab or a one-off job): `npm run seed`.
 
-### Option B — Deploy to Vercel
-1. Push to GitHub.
-2. Import the repo in https://vercel.com/new.
-3. Add a `vercel.json` (optional) or use Vercel's Node preset; set the same environment variables.
-4. Vercel serverless functions work best with `npx prisma generate` in the build step (already wired via `postinstall`).
-5. Because serverless functions are stateless, run migrations from your local machine against the production `DATABASE_URL` before/while deploying:
-   ```bash
-   npx prisma migrate deploy
-   npm run seed
-   ```
-
 ### Stripe Webhook (only if you want live webhook confirmation instead of manual `/confirm`)
 In the Stripe Dashboard → Developers → Webhooks → Add endpoint:
 `https://<your-live-url>/api/payments/webhook`, event: `checkout.session.completed`. Copy the signing secret into `STRIPE_WEBHOOK_SECRET` on your host.
 
 ---
-
-## 5. 🎥 Recording the demo video
-Cover, in 3–5 minutes:
-1. Quick project/API architecture overview.
-2. Register + login as Customer, Technician, and Admin in Postman.
-3. Customer creates a booking → Technician accepts it → Customer pays via Stripe test card → Technician marks IN_PROGRESS → COMPLETED → Customer leaves a review.
-4. Show a validation error and a 404 error to demonstrate the structured error format.
-5. Briefly mention one challenge you solved (e.g. Stripe checkout session + webhook confirmation, or booking status state machine).
-
----
-
-## 6. 📦 What to submit
-Fill this out and submit as instructed by `README.md` (assignment root):
-```
-Backend Repo     : https://github.com/<your-username>/fixitnow-backend
-Live API         : https://<your-deployed-url>/api
-API Docs         : postman/FixItNow.postman_collection.json (import into Postman) 
-                    or publish via "Export" > "Publish Docs" on Postman for a shareable link
-Demo Video       : <your Loom/Drive link>
-Admin Email      : <the ADMIN_EMAIL you set in .env>
-Admin Password   : <the ADMIN_PASSWORD you set in .env>
-```
 
 ### Before pushing to GitHub
 - Make sure `.env` is **not** committed (already in `.gitignore`).
