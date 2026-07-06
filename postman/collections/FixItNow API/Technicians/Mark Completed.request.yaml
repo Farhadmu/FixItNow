@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/technician/bookings/{{bookingId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{technicianToken}}
+body:
+  type: text
+  content: |-
+    {
+      "status": "COMPLETED"
+    }
+order: 8000

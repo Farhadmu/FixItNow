@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/payments/confirm"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{customerToken}}
+body:
+  type: text
+  content: |-
+    {
+      "sessionId": "{{sessionId}}"
+    }
+order: 2000

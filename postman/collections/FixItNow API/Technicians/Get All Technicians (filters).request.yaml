@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/technicians?location=Dhaka&minRating=4"
+method: GET
+queryParams:
+  location: Dhaka
+  minRating: "4"
+order: 1000

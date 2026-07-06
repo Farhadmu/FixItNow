@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/categories/{{categoryId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+body:
+  type: text
+  content: |-
+    {
+      "description": "Updated description"
+    }
+order: 3000

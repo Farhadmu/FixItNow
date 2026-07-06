@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/payments/create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{customerToken}}
+body:
+  type: text
+  content: |-
+    {
+      "bookingId": "{{bookingId}}"
+    }
+order: 1000

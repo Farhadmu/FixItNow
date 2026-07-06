@@ -1,0 +1,22 @@
+$kind: collection
+name: FixItNow API
+description: Home Service Marketplace Backend API - Assignment 4
+variables:
+  - key: baseUrl
+    value: http://localhost:5000/api
+    secret: false
+  - key: customerToken
+    secret: true
+  - key: technicianToken
+    secret: true
+  - key: adminToken
+    secret: true
+  - key: categoryId
+    secret: true
+  - key: serviceId
+    secret: true
+  - key: bookingId
+    secret: true
+  - key: sessionId
+    value: ""
+    secret: false

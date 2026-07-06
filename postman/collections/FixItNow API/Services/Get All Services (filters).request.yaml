@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseUrl}}/services?search=pipe&location=Dhaka&minPrice=100&maxPrice=5000&page=1&limit=10"
+method: GET
+queryParams:
+  search: pipe
+  location: Dhaka
+  minPrice: "100"
+  maxPrice: "5000"
+  page: "1"
+  limit: "10"
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/services/{{serviceId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{technicianToken}}
+body:
+  type: text
+  content: |-
+    {
+      "price": 1800
+    }
+order: 4000

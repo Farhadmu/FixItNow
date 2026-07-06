@@ -1,0 +1,14 @@
+$kind: http-request
+name: Ban/Unban User
+url: "{{baseUrl}}/admin/users/USER_ID"
+method: PATCH
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+body:
+  type: text
+  content: |-
+    {
+      "status": "BANNED"
+    }
+order: 2000

@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}/admin/users?role=CUSTOMER&status=ACTIVE"
+method: GET
+headers:
+  Authorization: Bearer {{adminToken}}
+queryParams:
+  role: CUSTOMER
+  status: ACTIVE
+order: 1000

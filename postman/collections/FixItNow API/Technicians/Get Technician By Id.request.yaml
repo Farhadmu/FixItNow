@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/technicians/TECHNICIAN_PROFILE_ID"
+method: GET
+order: 2000

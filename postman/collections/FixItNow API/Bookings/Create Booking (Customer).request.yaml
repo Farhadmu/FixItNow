@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/bookings"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{customerToken}}
+body:
+  type: text
+  content: |-
+    {
+      "serviceId": "{{serviceId}}",
+      "scheduledAt": "2026-08-01T10:00:00.000Z",
+      "address": "House 12, Road 5, Dhaka"
+    }
+order: 1000

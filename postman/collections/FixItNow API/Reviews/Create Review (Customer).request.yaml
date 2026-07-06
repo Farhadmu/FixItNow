@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/reviews"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{customerToken}}
+body:
+  type: text
+  content: |-
+    {
+      "bookingId": "{{bookingId}}",
+      "rating": 5,
+      "comment": "Great service, very professional!"
+    }
+order: 1000

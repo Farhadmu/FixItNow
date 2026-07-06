@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/services"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{technicianToken}}
+body:
+  type: text
+  content: |-
+    {
+      "title": "Pipe Leak Repair",
+      "description": "Fix leaking pipes at home",
+      "price": 1500,
+      "categoryId": "{{categoryId}}",
+      "location": "Dhaka"
+    }
+order: 3000
