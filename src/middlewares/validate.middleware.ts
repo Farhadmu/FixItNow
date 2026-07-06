@@ -1,0 +1,22 @@
+import { NextFunction, Request, Response } from "express";
+import { AnyZodObject } from "zod";
+
+// Validates req.body / req.params / req.query against a Zod schema.
+// On failure, ZodError bubbles up to the global error middleware which
+// formats it into the standard { success, message, errorDetails } shape.
+const validateRequest = (schema: AnyZodObject) => {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      await schema.parseAsync({
+        body: req.body,
+        params: req.params,
+        query: req.query,
+      });
+      next();
+    } catch (err) {
+      next(err);
+    }
+  };
+};
+
+export default validateRequest;
