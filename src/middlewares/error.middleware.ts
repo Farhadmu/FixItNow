@@ -38,6 +38,13 @@ const errorMiddleware = (
       message = "Database error";
     }
     errorDetails = err.meta || err.message;
+  } else if (
+    err instanceof Prisma.PrismaClientValidationError ||
+    err instanceof Prisma.PrismaClientInitializationError
+  ) {
+    statusCode = 503;
+    message = "Database unavailable";
+    errorDetails = err.message;
   } else if (err?.name === "JsonWebTokenError") {
     statusCode = 401;
     message = "Invalid token";
