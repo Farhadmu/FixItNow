@@ -40,6 +40,14 @@ app.get("/api", (req: Request, res: Response) => {
   });
 });
 
+app.get("/health", (req: Request, res: Response) => {
+  res.json({
+    success: true,
+    message: "FixItNow backend is healthy",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.use("/api", routes);
 
 app.use(notFoundMiddleware);
