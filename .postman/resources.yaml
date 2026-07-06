@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 293f374a-136d-465e-8c0b-7aa444a9ba41
+
+cloudResources:
+  collections:
+    ../postman/collections/FixItNow API: 330f0dde-51ef-4751-a393-abfb4998859c
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/
